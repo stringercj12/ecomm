@@ -1,0 +1,100 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <app-header typeheader="notification"></app-header>
+
+
+  <div class="container">
+    <h1>Search</h1>
+
+    <!-- <ion-searchbar></ion-searchbar> -->
+    <div class="search">
+      
+      <form [formGroup]="form" (ngSubmit)="searchProduct()">
+        <button type="submit" class="btn-transparent">
+          <ion-icon name="search"></ion-icon>
+        </button>
+        <input placeholder="Search Something" formControlName="termo">
+      </form>
+    </div>
+
+    <div class="recents-search">
+      <div class="legends">
+        <div class="title">
+          RECENTLY VIEWED
+        </div>
+        <div class="clear">
+          CLEAR
+        </div>
+      </div>
+
+
+      <ion-slides>
+        <div class="nav-slide">
+          <ion-icon class="left" name="chevron-back-outline" (click)="prevSlide()"></ion-icon>
+          <ion-icon class="right" name="chevron-forward-outline" (click)="nextSlide()"></ion-icon>
+        </div>
+        <ion-slide>
+          <div class="card-recent">
+            <div class="card-recent-item">
+              <div class="img">
+                <img src="/assets/cachecol.png" alt="">
+              </div>
+              <div class="description">
+                <div class="label">
+                  Red Cotton Scarf
+                </div>
+                <div class="price">
+                  $11.00
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <div class="card-recent">
+            <div class="card-recent-item">
+              <div class="img">
+                <img src="/assets/cachecol.png" alt="">
+              </div>
+              <div class="description">
+                <div class="label">
+                  Red Cotton Scarf
+                </div>
+                <div class="price">
+                  $11.00
+                </div>
+              </div>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+
+
+    </div>
+
+
+    <div class="recomend">
+      <div class="legends">
+        <div class="title">
+          RECOMMEND VIEWED
+        </div>
+        <div class="clear">
+          REFRESH
+        </div>
+      </div>
+
+      <div class="badges">
+        <div class="badge-item" *ngFor="let item of recommended">
+          {{ item.title }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-voice" (click)="getAudio()">
+    <ion-icon name="mic-outline"></ion-icon>
+    <span>Tap & hold to search with voice</span>
+  </div>
+</ion-content>

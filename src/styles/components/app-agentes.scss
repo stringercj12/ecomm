@@ -1,0 +1,38 @@
+app-agentes {
+  app-collapse {
+
+
+    > div > .card, > div > header + div > .card {
+      border-radius: 0 !important;
+      border-color: transparent !important;
+      margin-bottom: 0 !important;
+    }
+
+    header {
+      &.card {
+        &.collapsed {
+          border-color: transparent;
+          border-bottom: 1px $blueLight solid !important;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          font-weight: 600;
+          color: $gray-600;
+        }
+      }
+    }
+
+
+    header + div {
+
+    }
+
+    &:last-child {
+      header {
+        &.card {
+          border-bottom: none !important;
+        }
+      }
+    }
+
+  }
+}

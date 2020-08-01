@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-toolbar>
+    <app-header typeheader="search" [search]="termo"></app-header>
+  </ion-toolbar>
+
+  <div class="container">
+    <ng-container *ngFor="let item of resultado">
+
+      <div class="card" (click)="openProduct(item)">
+        <div class="card-favorite">
+          <ion-icon name="heart-outline"></ion-icon>
+        </div>
+        <div class="card-img">
+          <img [src]="item.imgPath" alt="">
+        </div>
+        <div class="card-details">
+          <div class="title">
+            <!-- V Neck Shirt - Pink -->
+            {{ item.title }}
+          </div>
+          <div class="price-and-avaliacao">
+            <div class="price">
+              {{ item.price }}
+            </div>
+            <div class="star">
+              <div class="icon">
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+              {{ item.star }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+</ion-content>

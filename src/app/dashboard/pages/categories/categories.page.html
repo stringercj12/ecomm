@@ -1,0 +1,89 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <app-header typeheader="close"></app-header>
+
+  <div class="container">
+    <h1>Categories</h1>
+    <div class="categories">
+      <div class="slide-categories">
+        <div class="slide-item">
+          <div class="icone apparel">
+            <img src="/assets/apparel.png" alt="Apparel">
+          </div>
+          <div class="title">Apparel</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="icone beauty">asfdsaf</div>
+          <div class="title">Beauty</div>
+        </div>
+
+        <div class="slide-item">
+          <div class="icone shoes">
+            <img src="/assets/shoes.png" alt="Shoes">
+          </div>
+          <div class="title">Shoes</div>
+        </div>
+
+
+        <div class="slide-item">
+          <div class="icone eletronics">
+            <span class="icon-dog"></span>
+          </div>
+          <div class="title">Eletronics</div>
+        </div>
+
+
+        <div class="slide-item">
+          <div class="icone furniture"></div>
+          <div class="title">Furniture</div>
+        </div>
+
+
+        <div class="slide-item">
+          <div class="icone home"></div>
+          <div class="title">Home</div>
+        </div>
+
+
+        <div class="slide-item">
+          <div class="icone stationary"></div>
+          <div class="title">Stationary</div>
+        </div>
+      </div>
+
+      <div class="categories-menu">
+        <div style="margin-bottom: 40px;">
+          <span class="sub-title">MEN'S APPAREl</span>
+          <div class="card">
+            <div class="card-item" *ngFor="let item of mensApparel">
+              <div class="title">
+                {{item.title}}
+              </div>
+              <div class="icone">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="sub-title">WOMEN APPAREL</span>
+          <div class="card">
+            <div class="card-item" *ngFor="let item of womenApparel">
+              <div class="title">
+                {{item.title}}
+              </div>
+              <div class="icone">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>

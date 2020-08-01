@@ -1,0 +1,61 @@
+<div class="header" *ngIf="typeheader == 'notification'">
+  <div class="icons">
+    <div class="icon">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      <div class="notifications">6</div>
+    </div>
+    <div class="icon">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <div class="notifications">6</div>
+    </div>
+  </div>
+</div>
+
+<div class="header" *ngIf="typeheader == 'close'">
+  <div class="icons">
+    <div class="icon red" (click)="toBack()">
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+  </div>
+</div>
+
+<div class="header" *ngIf="typeheader == 'search'">
+  <div class="icons">
+    <div class="icon red" (click)="modal.dismiss('closer')">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </div>
+    <div class="search">
+      <form [formGroup]="form" (ngSubmit)="searchProduct()">
+        <button type="submit">
+          <ion-icon name="search"></ion-icon>
+        </button>
+        <input placeholder="Search Something" formControlName="search">
+      </form>
+    </div>
+    <div class="icon red">
+      <ion-icon name="funnel-outline"></ion-icon>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="header" *ngIf="typeheader == 'product-details'">
+  <div class="icons">
+    <div class="icon red" (click)="toBack('dashboard/search')">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </div>
+    <div class="search">
+      <form [formGroup]="form" (ngSubmit)="searchProduct()">
+        <button type="submit">
+          <ion-icon name="search"></ion-icon>
+        </button>
+        <input placeholder="Search Something" formControlName="search">
+      </form>
+    </div>
+    <div class="icon red">
+      <ion-icon name="funnel-outline"></ion-icon>
+    </div>
+  </div>
+</div>

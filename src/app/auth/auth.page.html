@@ -1,0 +1,24 @@
+<div class="container">
+  <!-- Segment with default selection -->
+  <div class="top">
+    <ion-segment (ionChange)="segmentChanged($event)" value="login">
+      <ion-segment-button value="login" class="segment-button-active">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="signup">
+        <ion-label>Sign up</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="forgot">
+        <ion-label>Forgot</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div class="box">
+    <app-login *ngIf="ativo == 'login'"></app-login>
+    <app-forgot *ngIf="ativo == 'forgot'"></app-forgot>
+    <app-signup *ngIf="ativo == 'signup'"></app-signup>
+  </div>
+
+</div>

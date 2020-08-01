@@ -1,0 +1,212 @@
+<ion-toolbar>
+  <div class="header">
+    <div class="icon red" (click)="toBack('dashboard/search/')">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </div>
+    <div class="title">
+      <span class="name">{{ product.title }}</span>
+      <div class="price-and-avaliacao">
+        <div class="price">
+          {{ product.price }}
+        </div>
+        <div class="star">
+          <ion-icon name="star"></ion-icon>
+          {{ product.star }}
+        </div>
+      </div>
+    </div>
+    <div class="icon">
+      <ion-icon name="cart-outline"></ion-icon>
+      <div class="notifications">6</div>
+    </div>
+  </div>
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="container">
+
+    <div class="product">
+      <div class="product-image">
+        <img [src]="product.imgPath" alt="">
+      </div>
+
+
+
+      <ion-segment (ionChange)="segmentChanged($event)" [value]="selectTab">
+        <ion-segment-button value="tab-1">
+          <ion-label>Product</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tab-2">
+          <ion-label>Details</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tab-3">
+          <ion-label>Reviews</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+
+
+
+      <div class="product-color-size" id="tab-1" *ngIf="selectTab == 'tab-1'">
+
+        <div class="product-color">
+          <h5>SELECT COLOR</h5>
+
+          <div class="colors">
+            <div class="color pink"></div>
+            <div class="color orange"></div>
+            <div class="color blue-light"></div>
+            <div class="color white"></div>
+            <div class="color gray"></div>
+            <div class="color dark"></div>
+          </div>
+
+        </div>
+
+        <div class="product-size">
+          <h5>SELECT size (us)</h5>
+          <div class="sizes">
+            <div class="size">4.5</div>
+            <div class="size select">5.0</div>
+            <div class="size">6.5</div>
+            <div class="size">7.0</div>
+            <div class="size">8.0</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="product-details" id="tab-2" *ngIf="selectTab == 'tab-2'">
+        <div class="infos">
+          <div class="info">
+            <h5>
+              BRAND
+            </h5>
+            <div>
+              Lily's Ankle Boots
+            </div>
+          </div>
+
+          <div class="info2">
+            <h5>
+              SKU
+            </h5>
+            <div>
+              055654525656556
+            </div>
+          </div>
+
+          <div class="info">
+            <h5>
+              Condition
+            </h5>
+            <div>
+              Brand New, With Box
+            </div>
+          </div>
+
+
+          <div class="info2">
+            <h5>
+              Material
+            </h5>
+            <div>
+              Faux Sued, Velvet
+            </div>
+          </div>
+
+          <div class="info">
+            <h5>
+              Category
+            </h5>
+            <div>
+              Women Shoes
+            </div>
+          </div>
+
+          <div class="info2">
+            <h5>
+              Fitting
+            </h5>
+            <div>
+              True To Size
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-reviews" id="tab-3" *ngIf="selectTab == 'tab-3'">
+        <div class="reviews">
+          <div class="review" *ngFor="let item of list">
+            <div class="avatar">
+              <!-- <img src="" alt=""> -->
+              <div class="name-circle">
+                <span>JD</span>
+              </div>
+            </div>
+
+            <div class="descriptions">
+
+              <div class="star-data">
+                <div class="star">
+                  <img src="/assets/rating.png" alt="">
+                </div>
+                <div class="data">
+                  10 Oct, 2018
+                </div>
+              </div>
+
+              <div class="name">
+                Jane Doe
+              </div>
+
+              <div class="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+              </div>
+
+              <div class="images">
+                <div class="image">
+                  <img src="/assets/pic1.png" alt="">
+                </div>
+                <div class="image">
+                  <img src="/assets/pic2.png" alt="">
+                </div>
+                <div class="image">
+                  <img src="/assets/pic3.png" alt="">
+                </div>
+                <div class="image">
+                  <img src="/assets/pic4.png" alt="">
+                </div>
+                <div class="image">
+                  <img src="/assets/pic5.png" alt="">
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="product-actions">
+        <button type="button" class="btn dark">
+          SHARE THIS
+          <div class="icon">
+            <ion-icon name="arrow-up"></ion-icon>
+          </div>
+        </button>
+
+        <button type="submit" class="btn red">
+          ADD TO CART
+          <div class="icon">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
